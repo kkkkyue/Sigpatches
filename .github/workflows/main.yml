@@ -28,7 +28,7 @@ jobs:
       uses: abatilo/release-info-action@v1.3.0
       with:
         owner: kkkkyue
-        repo: Tinfoil
+        repo: Sigpatches
     
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -38,7 +38,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './package-lock.json'
     - run: npm install
-    - run: node getTinfoil.js
+    - run: node GetSigpatches.js.js
 
     - name: Create Release
       run: |
