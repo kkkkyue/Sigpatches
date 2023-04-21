@@ -38,7 +38,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './package-lock.json'
     - run: npm install
-    - run: node GetSigpatches.js.js
+    - run: node GetSigpatches.js
 
     - name: Create Release
       run: |
