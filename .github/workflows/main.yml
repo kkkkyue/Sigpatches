@@ -51,8 +51,8 @@ jobs:
           assets+=("-a" "$asset")
           name=${asset}
         done
-
-        if [ $LASTTAG != "${name}" ]; then hub release create "${assets[@]}" -m "${name}" "${name}"; fi
+        if [ $LASTTAG = "v1.0.0" ]; then hub release delete "v1.0.0"; fi
+        hub release create "${assets[@]}" -m "Sigpatches last" "v1.0.0"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LASTTAG: ${{ steps.latest_version.outputs.latest_tag }}
