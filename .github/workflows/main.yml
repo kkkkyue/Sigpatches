@@ -51,6 +51,7 @@ jobs:
           assets+=("-a" "$asset")
           name=${asset}
         done
+        sudo apt-get install -y hub
         if [ $LASTTAG = "v1.0.0" ]; then hub release delete "v1.0.0"; fi
         hub release create "${assets[@]}" -m "Sigpatches last" "v1.0.0"
       env:
